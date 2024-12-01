@@ -47,6 +47,14 @@ class Player(CircleShape):
             # ?
             self.shoot()
         
+        if self.position.x < 0:
+            self.position.x = 0
+        if self.position.x > SCREEN_WIDTH:
+            self.position.x = SCREEN_WIDTH
+        if self.position.y < 0:
+            self.position.y = 0
+        if self.position.y > SCREEN_HEIGHT:
+            self.position.y = SCREEN_HEIGHT
     
     def move(self, dt):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
